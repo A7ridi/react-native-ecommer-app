@@ -1,0 +1,11 @@
+{
+  "console-ninja.toolsToEnableSupportAutomaticallyFor": {
+    "live-server-extension": true,
+    "live-preview-extension": true
+  },
+  "console-ninja.outputMode": "In View",
+  "console-ninja.output.showLogsOnlyFromOpenedFiles": true,
+  "console-ninja.output.showLogsFromMultipleRunningToolsTogether": true,
+  "console-ninja.output.showLogsFromLogPointsOnly": true,
+  "console-ninja.captureFunctions": true
+}
