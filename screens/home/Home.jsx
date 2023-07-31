@@ -8,6 +8,7 @@ import { Welcome } from "../../components";
 import Headings from "../../components/home/heading/Heading";
 import ProductRow from "../../components/products/ProductRow";
 import { useNavigation } from "@react-navigation/native";
+import { COLORS } from "../../constants";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -17,19 +18,19 @@ const Home = () => {
       <View style={styles.appBarWrapper}>
         <View style={styles.appBar}>
           <View style={styles.locationContainer}>
-            <Ionicons name="location-outline" size={24} />
+            <Ionicons name="location-sharp" size={24} color={COLORS.primary} />
             <Text style={styles.location}>Delhiii, India</Text>
           </View>
 
-          <View style={styles.cartCountContainer}>
-            <View style={styles.cartCount}>
-              <Text style={styles.cartNumber}>8</Text>
-            </View>
+          <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
+            <View style={styles.cartCountContainer}>
+              <View style={styles.cartCount}>
+                <Text style={styles.cartNumber}>8</Text>
+              </View>
 
-            <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
               <Fontisto name="shopping-bag" size={20} />
-            </TouchableOpacity>
-          </View>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
 

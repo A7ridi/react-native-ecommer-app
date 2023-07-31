@@ -27,6 +27,14 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: SIZES.medium,
     borderTopRightRadius: SIZES.medium,
   },
+  cartRow: {
+    paddingBottom: SIZES.small,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: SIZES.width,
+    display: "flex",
+  },
   titleRow: {
     marginHorizontal: 20,
     paddingBottom: SIZES.small,
@@ -44,13 +52,14 @@ const styles = StyleSheet.create({
     width: SIZES.width - 10,
     top: 5,
   },
-  rating: {
+  rating: (counter) => ({
     top: SIZES.large,
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     marginHorizontal: SIZES.large,
-  },
+    gap: counter ? 8 : 0,
+  }),
   ratingText: {
     color: COLORS.gray,
     fontFamily: "medium",
@@ -67,6 +76,57 @@ const styles = StyleSheet.create({
   priceWrapper: {
     backgroundColor: COLORS.secondary,
     borderRadius: SIZES.large,
+  },
+  descriptionWrapper: {
+    marginTop: SIZES.large * 2,
+    marginHorizontal: SIZES.large,
+  },
+  description: {
+    fontFamily: "medium",
+    fontSize: SIZES.large - 2,
+  },
+  descText: {
+    fontFamily: "regular",
+    fontSize: SIZES.small,
+    textAlign: "justify",
+    marginBottom: SIZES.small,
+  },
+  locationContainer: {
+    marginBottom: SIZES.small,
+  },
+  location: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: COLORS.secondary,
+    marginHorizontal: 12,
+    padding: 5,
+    borderRadius: SIZES.large,
+  },
+  locationIcon: {
+    flexDirection: "row",
+  },
+  cartBtn: {
+    width: SIZES.width * 0.7,
+    backgroundColor: COLORS.black,
+    padding: SIZES.small / 2,
+    borderRadius: SIZES.large,
+    marginLeft: 12,
+    alignItems: "center",
+  },
+  cartTitle: {
+    fontFamily: "semibold",
+    fontSize: SIZES.medium,
+    color: COLORS.lightWhite,
+  },
+  addCart: {
+    width: 37,
+    height: 37,
+    borderRadius: 50,
+    margin: SIZES.small,
+    backgroundColor: COLORS.black,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
