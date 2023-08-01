@@ -5,11 +5,10 @@ import { Feather, Ionicons } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { useState } from "react";
 
-const Search = () => {
+const Search = ({ searchProducts = () => {} }) => {
   const navigation = useNavigation();
   const route = useRoute();
   const [text, setText] = useState("");
-  console.log(route);
 
   return (
     <View style={styles.searchContainer}>
@@ -23,15 +22,22 @@ const Search = () => {
           value={text}
           onChangeText={setText}
           onPressIn={() => {
-            if (route.name.toLowerCase() === "search") return null;
-            navigation.navigate("Search");
+            if (route.name.toLowerCase() === "home") {
+              navigation.navigate("Search");
+            }
           }}
           placeholder="Search anything..."
         />
       </View>
 
       <View>
-        <TouchableOpacity style={styles.searchBtn}>
+        <TouchableOpacity
+          style={styles.searchBtn}
+          onPress={() => {
+            if (route.name.toLowerCase() === "home") return null;
+            searchProducts(text);
+          }}
+        >
           <Feather name="search" size={SIZES.xLarge} color={COLORS.offwhite} />
         </TouchableOpacity>
       </View>

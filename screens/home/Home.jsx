@@ -19,7 +19,7 @@ const Home = () => {
         <View style={styles.appBar}>
           <View style={styles.locationContainer}>
             <Ionicons name="location-sharp" size={24} color={COLORS.primary} />
-            <Text style={styles.location}>Delhiii, India</Text>
+            <Text style={styles.location}>Delhi, India</Text>
           </View>
 
           <TouchableOpacity onPress={() => navigation.navigate("Cart")}>

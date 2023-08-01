@@ -1,7 +1,7 @@
 import { Image, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import styles from "./details.style";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import {
   Ionicons,
   SimpleLineIcons,
@@ -12,6 +12,8 @@ import { COLORS } from "../../constants";
 import useCounter from "../../hooks/useCounter";
 
 const ProductDetails = () => {
+  const route = useRoute();
+  const { item } = route.params;
   const navigation = useNavigation();
   const { count, increaseCount, decreaseCount } = useCounter();
 
@@ -19,7 +21,7 @@ const ProductDetails = () => {
     <View style={styles.container}>
       <View style={styles.upperRow}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="chevron-back-circle" size={30} color="white" />
+          <Ionicons name="chevron-back-circle" size={30} color={COLORS.white} />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -27,18 +29,13 @@ const ProductDetails = () => {
         </TouchableOpacity>
       </View>
 
-      <Image
-        source={{
-          uri: "https://images.pexels.com/photos/2081199/pexels-photo-2081199.jpeg?auto=compress&cs=tinysrgb&w=600",
-        }}
-        style={styles.image}
-      />
+      <Image source={{ uri: item.imageUrl }} style={styles.image} />
 
       <View style={styles.details}>
         <View style={styles.titleRow}>
-          <Text style={styles.title}>Lorem, ipsum dolor.</Text>
+          <Text style={styles.title}>{item.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$ 456.78</Text>
+            <Text style={styles.price}>$ {item.price}</Text>
           </View>
         </View>
 
@@ -66,19 +63,14 @@ const ProductDetails = () => {
 
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>Description</Text>
-          <Text style={styles.descText}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            unde exercitationem explicabo minima magni dolorum sed nisi rerum
-            ipsa dolor id, commodi beatae, illum tenetur veritatis omnis debitis
-            ipsum neque?
-          </Text>
+          <Text style={styles.descText}>{item.description}</Text>
         </View>
 
         <View style={styles.locationContainer}>
           <View style={styles.location}>
             <View style={styles.locationIcon}>
               <Ionicons name="location-outline" size={20} />
-              <Text> Dallas </Text>
+              <Text> {item.product_location} </Text>
             </View>
 
             <View style={styles.locationIcon}>

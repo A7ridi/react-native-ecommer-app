@@ -3,9 +3,9 @@ import { COLORS, SIZES } from "../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    width: 180,
+    width: 160,
     height: 240,
-    marginEnd: 22,
+    marginEnd: SIZES.xSmall,
     borderRadius: SIZES.medium,
     backgroundColor: COLORS.secondary,
   },
@@ -45,6 +45,22 @@ const styles = StyleSheet.create({
   },
   productRowContainer: {
     marginTop: SIZES.medium,
+    marginBottom: SIZES.large * 5,
+  },
+  productListContainer: {
+    alignItems: "flex-start",
+    paddingTop: SIZES.xxxLarge,
+    paddingLeft: SIZES.small / 2,
+  },
+  productListLoadingContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+    marginTop: SIZES.xxxLarge * 3,
+  },
+  separator: {
+    height: 16,
   },
 });
 

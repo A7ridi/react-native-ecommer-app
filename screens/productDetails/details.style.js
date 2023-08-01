@@ -37,11 +37,9 @@ const styles = StyleSheet.create({
   },
   titleRow: {
     marginHorizontal: 20,
-    paddingBottom: SIZES.small,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: SIZES.width - 44,
     top: 20,
   },
   ratingRow: {
@@ -67,6 +65,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "semibold",
     fontSize: SIZES.large,
+    flex: 0.8,
   },
   price: {
     paddingHorizontal: 10,
@@ -76,6 +75,7 @@ const styles = StyleSheet.create({
   priceWrapper: {
     backgroundColor: COLORS.secondary,
     borderRadius: SIZES.large,
+    // flex: 0.2,
   },
   descriptionWrapper: {
     marginTop: SIZES.large * 2,
