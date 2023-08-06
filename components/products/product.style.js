@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   productListContainer: {
     alignItems: "flex-start",
-    paddingTop: SIZES.xxxLarge,
+    paddingTop: SIZES.xxLarge,
     paddingLeft: SIZES.small / 2,
   },
   productListLoadingContainer: {

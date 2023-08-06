@@ -33,7 +33,7 @@ const Search = () => {
             data={products}
             keyExtractor={(item) => item._id}
             renderItem={({ item }) => <SearchTiles item={item} />}
-            // contentContainerStyle={styles.productListContainer}
+            style={{ marginHorizontal: 12 }}
           />
         </View>
       )}

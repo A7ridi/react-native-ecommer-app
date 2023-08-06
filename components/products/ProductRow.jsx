@@ -6,6 +6,7 @@ import useFetch from "../../hooks/useFetch";
 
 const ProductRow = () => {
   const { products, loading, error } = useFetch();
+  console.log({ products });
 
   return (
     <View style={styles.productRowContainer}>

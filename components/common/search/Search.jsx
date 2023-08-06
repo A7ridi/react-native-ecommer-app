@@ -34,7 +34,8 @@ const Search = ({ searchProducts = () => {} }) => {
         <TouchableOpacity
           style={styles.searchBtn}
           onPress={() => {
-            if (route.name.toLowerCase() === "home") return null;
+            if (route.name.toLowerCase() === "home" || text.length === 0)
+              return null;
             searchProducts(text);
           }}
         >

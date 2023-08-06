@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
   },
   productListContainer: {
     alignItems: "flex-start",
-    paddingLeft: SIZES.small / 2,
     gap: 10,
   },
 });

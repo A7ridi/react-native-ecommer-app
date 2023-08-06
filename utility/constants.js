@@ -1,3 +1,3 @@
-const BASE_URL = "http://192.168.1.6:8000/api/products/";
+const BASE_URL = "https://furtinure-node-express.vercel.app/api/products";
 
 export { BASE_URL };

@@ -1,4 +1,3 @@
-import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home, Search, Profile } from "../screens";
 import { Ionicons, Feather, Octicons } from "@expo/vector-icons";
@@ -90,5 +89,3 @@ const BottomTabNavigation = () => {
 };
 
 export default BottomTabNavigation;
-
-const styles = StyleSheet.create({});
